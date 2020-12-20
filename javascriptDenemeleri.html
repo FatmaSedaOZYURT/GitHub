@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="range" min="0" max="100" step="5" id="rangeStok" value="" onchange="change()">
+
+    <span id="mesaj"></span>
+    <script>
+
+        function change() {
+            var range = document.getElementById("rangeStok").value;
+            console.log(range);
+            var span = document.getElementById("mesaj");
+
+            span.innerText = range;
+            if(range <= 30){
+                span.style = "color: red";
+            }else{
+                span.style = "color: black";
+            }
+        }
+
+        // let date = (new Date().getFullYear() - 1993);
+        // let veri = "a";
+
+
+        // console.log(isNaN(veri));
+
+    </script>
+</body>
+
+</html>
