@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="yuklendi()">
+    <h1 id="msj"></h1>
+    <script>
+        function yuklendi() {
+
+            let saat = new Date().getHours();
+            //Ternary Operatör
+            var msj = saat < 12 ? "Günaydın..." : "İyi Günler...";
+            // if (saat < 12) {
+            //     msj = "Günaydın...";
+            // } else {
+            //     msj = "İyi Günler...";
+            // }
+            document.getElementById("msj").innerText = msj;
+        }
+    </script>
+</body>
+
+</html>
