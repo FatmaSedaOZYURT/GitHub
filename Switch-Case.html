@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Ürün Fiyatı: 1000 TL</p>
+    Ödeme yöntemi:
+    <select id="selectOdeme" onchange="degisti()">
+        <option value="0">Kredi Kartına taksitle</option>
+        <option value="1">Banka Havalesi</option>
+        <option value="2">Kapıda Ödeme</option>
+    </select>
+
+    <h3>Toplam Tutar: <span id="tutar"></span></h3>
+
+    <script>
+        function degisti() {
+            let deger = document.getElementById("selectOdeme").value;
+            let sonuc = 0;
+            console.log(deger);
+            switch (deger) {
+                case "0":
+                    sonuc = 1000 * 1.03;
+                    break;
+                case "1":
+                    sonuc = 1000 * 1.01;
+                    break;
+                case "2":
+                    sonuc = 1000 * 1;
+                    break;
+                default:
+            }
+            document.getElementById("tutar").innerText = sonuc + " TL";
+        }
+    </script>
+</body>
+
+</html>
