@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="getir()">Malzemeleri Getir</button>
+    <ul id="malzemeler">
+
+    </ul>
+
+    <script>
+        function getir() {
+            let malzemeler = ["Patates", "Soğan", "Domates", "Yağ"];
+            var ul = document.getElementById("malzemeler");
+
+            for (let index = 0; index < malzemeler.length; index++) {
+                let li = document.createElement("li");
+                li.innerText = malzemeler[index];
+                ul.appendChild(li);
+            }
+            for (let item in malzemeler) {
+                console.log(malzemeler[item]);
+            }
+            // malzemeler.forEach(element => {
+            //     let li = document.createElement("li");
+            //     li.innerText = element;
+            //     ul.appendChild(li);
+            // });
+        }
+    </script>
+</body>
+
+</html>
