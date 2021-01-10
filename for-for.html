@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="text">
+    <button onclick="tikla()">Tıkla!</button>
+    <div id="eklenecek"></div>
+    <script>
+        function tikla() {
+            let sayi = document.getElementById("text").value;
+
+            var array = ["A", "B", "C", "D"];
+            let table = document.createElement("table");
+            for (let i = 0; i < array.length; i++) {
+                let tr = document.createElement("tr");
+                for (let j = 1; j <= sayi; j++) {
+                    let td = document.createElement("td");
+                    td.innerText = array[i] + j;
+                    tr.appendChild(td);
+                }
+                table.appendChild(tr);
+            }
+            document.getElementById("eklenecek").appendChild(table);
+        }
+    </script>
+</body>
+
+</html>

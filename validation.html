@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <h4>Kullanıcı Adı:</h4>
+        <input type="text" class="zorunlu" data-mesaj="Kullanıcı adı boş bırakılamaz..." data-error="kullaniciHata">
+        <span id="kullaniciHata"></span>
+        <h4>Şifre:</h4>
+        <input type="text" class="zorunlu" data-mesaj="Şife boş bırakılamaz..." data-error="sifreHata">
+        <span id="sifreHata"></span>
+        <br>
+        <br>
+        <input type="submit" value="Kayıt Ol!" onclick="return denetle()">
+
+
+    </form>
+    <script>
+        function denetle() {
+            let elementler = document.getElementsByClassName('zorunlu');
+            console.log(elementler);
+
+            for (let i = 0; i < elementler.length; i++) {
+                let deger = elementler[i].value;
+                if (deger === "") {
+                    document.getElementById(elementler[i].getAttribute("data-error")).innerHTML = elementler[i].getAttribute("data-mesaj");
+                    elementler[i].addEventListener("change", function () { //Runtime da olay yakalamış olduk.
+                        document.getElementById(elementler[i].getAttribute("data-error")).innerText="";
+                    });
+                    return false;
+                }
+            }
+
+            return true;
+        }
+    </script>
+</body>
+
+</html>
